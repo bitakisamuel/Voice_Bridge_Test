@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceBridge | Find Your Voice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <span class="logo-mark">🎤</span>
+        <span>Light Voice Bridge</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#record">Record</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#progress">Progress</a>
+        <a href="#training">Training</a>
+    </nav>
+
+    <button id="themeBtn">🌙</button>
+</header>
+
+
+<!-- HERO -->
+<section id="home" class="hero">
+
+    <div class="hero-content">
+        <p class="small-title">LIGHT VOICE BRIDGE</p>
+
+        <h1>
+            Find Your <span>Voice.</span><br>
+            Train Your <span>Confidence.</span>
+        </h1>
+
+        <p>
+            Discover your natural tone, improve your technique,
+            and learn from voice lessons, practice guidance, and
+            AI-powered singing support designed for real progress.
+        </p>
+
+        <a href="#record" class="main-btn">
+            🎙 Start Recording
+        </a>
+    </div>
+
+    <div class="voice-circle">
+        <div class="mic">🎤</div>
+        <div class="wave"></div>
+    </div>
+
+</section>
+
+
+<!-- RECORD -->
+<section id="record" class="section">
+
+    <div class="section-title">
+        <p>VOICE ANALYSIS</p>
+        <h2>Record Your Voice</h2>
+        <span>Sing naturally and let VoiceBridge analyze your performance.</span>
+    </div>
+
+    <div class="record-card">
+
+        <div id="recordStatus">
+            Ready to record
+        </div>
+
+        <div id="timer">
+            00:00
+        </div>
+
+        <div class="record-buttons">
+
+            <button id="recordBtn" class="record-btn">
+                🔴 Start Recording
+            </button>
+
+            <button id="stopBtn" class="stop-btn" disabled>
+                ⏹ Stop
+            </button>
+
+        </div>
+
+        <audio id="audioPlayer" controls></audio>
+
+        <div class="audio-actions">
+            <button id="deleteAudioBtn" class="danger-btn" type="button">
+                🗑 Delete Audio
+            </button>
+        </div>
+
+        <p class="record-note">
+            Tip: Find a quiet place and sing for at least 10 seconds.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ANALYSIS -->
+<section id="analysis" class="section">
+
+    <div class="section-title">
+        <p>YOUR PERFORMANCE</p>
+        <h2>Vocal Analysis</h2>
+        <span>Your latest recording analysis.</span>
+    </div>
+
+
+    <div class="overall-score">
+
+        <div class="score-circle">
+            <strong id="overallScore">--</strong>
+            <span>/100</span>
+        </div>
+
+        <div>
+            <h3>Overall Vocal Score</h3>
+            <p id="analysisMessage">
+                Record your voice to receive your analysis.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="analysis-grid">
+
+        <div class="analysis-card">
+            <div class="icon">🎵</div>
+            <h3>Pitch Accuracy</h3>
+            <strong id="pitchScore">--%</strong>
+            <div class="progress">
+                <div id="pitchBar"></div>
+            </div>
+        </div>
+
+
+        <div class="analysis-card">
+            <div class="icon">🥁</div>
+            <h3>Rhythm</h3>
+            <strong id="rhythmScore">--%</strong>
+            <div class="progress">
+                <div id="rhythmBar"></div>
+            </div>
+        </div>
+
+
+        <div class="analysis-card">
+            <div class="icon">🎯</div>
+            <h3>Stability</h3>
+            <strong id="stabilityScore">--%</strong>
+            <div class="progress">
+                <div id="stabilityBar"></div>
+            </div>
+        </div>
+
+
+        <div class="analysis-card">
+            <div class="icon">🗣️</div>
+            <h3>Diction <small>(target words)</small></h3>
+            <strong id="dictionScore">--%</strong>
+            <div class="progress">
+                <div id="dictionBar"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="range-card">
+
+        <div>
+            <p>VOCAL RANGE</p>
+            <h2 id="vocalRange">--</h2>
+        </div>
+
+        <div class="key-result">
+            <p>PITCH CENTER</p>
+            <h2 id="detectedKey">--</h2>
+            <span id="liveNote">Sing a steady note to detect pitch</span>
+        </div>
+
+        <div class="range-line">
+            <span>Low</span>
+            <div>
+                <span></span>
+            </div>
+            <span>High</span>
+        </div>
+
+    </div>
+
+    <div class="exercise-box">
+        <div class="section-title mini-title">
+            <p>IMPROVEMENT PLAN</p>
+            <h2>Exercises to help you grow</h2>
+        </div>
+
+        <div id="exerciseList" class="exercise-list">
+            <div class="exercise-card empty-exercise">
+                Record your voice to get your personalized exercises.
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- PROGRESS -->
+<section id="progress" class="section">
+
+    <div class="section-title">
+        <p>YOUR JOURNEY</p>
+        <h2>Progress Over Time</h2>
+        <span>Watch your voice improve like a fitness journey.</span>
+    </div>
+
+
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <span>🔥</span>
+            <h3 id="streak">0</h3>
+            <p>Practice Streak</p>
+        </div>
+
+        <div class="stat-card">
+            <span>🎙️</span>
+            <h3 id="recordings">0</h3>
+            <p>Recordings</p>
+        </div>
+
+        <div class="stat-card">
+            <span>📈</span>
+            <h3 id="bestScore">--</h3>
+            <p>Best Score</p>
+        </div>
+
+        <div class="stat-card">
+            <span>⏱️</span>
+            <h3 id="practiceTime">0m</h3>
+            <p>Practice Time</p>
+        </div>
+
+    </div>
+
+
+    <div class="history-card">
+
+        <div class="history-heading">
+            <h3>Recording History</h3>
+            <button id="clearHistoryBtn" class="danger-btn" type="button">
+                🗑 Clear History
+            </button>
+        </div>
+
+        <div id="historyList">
+            <p class="empty">
+                Your recording history will appear here.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TRAINING -->
+<section id="training" class="section training-section">
+
+    <div class="section-title">
+        <p>VOICE AI</p>
+        <h2>Search Voice Lessons, Questions & Guidance</h2>
+        <span>Ask anything about singing, breathing, resonance, warm-ups, pitch, and vocal health.</span>
+    </div>
+
+    <div class="ai-search-panel">
+
+        <div class="search-bar">
+            <input
+                id="voiceSearchInput"
+                type="text"
+                placeholder="Ask about voice lessons, breath support, tone, resonance, or singing technique..."
+                aria-label="Voice search"
+            >
+            <button id="voiceSearchBtn" type="button">Ask AI</button>
+        </div>
+
+        <div class="ai-actions">
+            <button class="voice-chip" type="button" data-question="How can I improve my breath support for singing?">Breath support</button>
+            <button class="voice-chip" type="button" data-question="What is the best warm-up for a weak or tired voice?">Warm-up tips</button>
+            <button class="voice-chip" type="button" data-question="How do I improve my resonance and vocal tone?">Resonance</button>
+            <button class="voice-chip" type="button" data-question="How do I sing higher notes without strain?">High notes</button>
+            <button class="voice-chip" type="button" data-question="How can I make my diction clearer when singing?">Diction</button>
+        </div>
+
+        <div id="aiAnswerBox" class="ai-answer-box">
+            <div class="ai-bubble">
+                Ask a voice question and the AI coach will give a clear, practical answer with technique tips and exercises.
+            </div>
+        </div>
+
+        <div class="api-box">
+            <label for="apiKeyInput">Optional OpenAI API key</label>
+            <div class="api-row">
+                <input id="apiKeyInput" type="password" placeholder="Paste your API key if you want live AI answers">
+                <button id="saveApiKeyBtn" type="button">Save</button>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="logo">
+        🎤 VoiceBridge
+    </div>
+
+    <p>
+        Find Your Voice. Build Your Confidence.
+    </p>
+
+    <p class="copyright">
+        © 2026 VoiceBridge. All rights reserved.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
